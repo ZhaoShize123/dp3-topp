@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Joint jerk comparison for DP3 and TOPPRA</title>
+  <desc id="desc">Joint 1 jerk utilization q_jerk1 on path 01. DP3 peak is 0.98 times the limit, while TOPPRA peak is 77.18 times the limit.</desc>
+  <rect width="960" height="560" fill="#f8fafc"/>
+  <rect x="24" y="24" width="912" height="512" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+
+  <text x="56" y="66" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">DP3 keeps third-order joint data within limits</text>
+  <text x="56" y="94" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#475569">Path 01, normalized Joint 1 jerk utilization (q_jerk1); gray band is the +/-1 third-order joint constraint</text>
+
+  <rect x="72" y="122" width="590" height="280" fill="#f8fafc" stroke="#dbe3ef"/>
+  <rect x="72" y="145.33" width="590" height="233.33" fill="#ecfeff" opacity="0.78"/>
+  <line x1="72" y1="145.33" x2="662" y2="145.33" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <line x1="72" y1="378.67" x2="662" y2="378.67" stroke="#0f766e" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <line x1="72" y1="262.00" x2="662" y2="262.00" stroke="#cbd5e1" stroke-width="1"/>
+
+  <polyline points="72.00,262.00 77.90,263.46 83.80,264.57 89.70,265.47 95.60,388.97 101.50,402.00 107.40,402.00 113.30,402.00 119.20,402.00 125.10,402.00 131.00,402.00 136.90,402.00 142.80,402.00 148.70,402.00 154.60,259.48 160.50,266.23 166.40,263.04 172.30,258.00 178.20,266.86 184.10,259.11 190.00,266.23 195.90,262.95 201.80,257.67 207.70,266.89 213.60,258.92 219.50,266.31 225.40,262.95 231.30,257.45 237.20,267.01 243.10,258.66 249.00,266.86 254.90,263.93 260.80,253.33 266.70,267.08 272.60,260.39 278.50,257.16 284.40,265.16 290.30,257.71 296.20,265.49 302.10,261.36 308.00,258.35 313.90,264.11 319.80,258.62 325.70,264.24 331.60,261.36 337.50,259.09 343.40,263.09 349.30,259.57 355.20,262.67 361.10,261.31 367.00,259.92 372.90,261.68 378.80,260.91 384.70,260.43 390.60,261.23 396.50,261.08 402.40,259.67 408.30,262.87 414.20,257.26 420.10,261.15 426.00,262.81 431.90,256.86 437.80,265.76 443.70,252.92 449.60,261.16 455.50,265.46 461.40,253.15 467.30,270.05 473.20,122.00 479.10,122.00 485.00,122.00 490.90,122.00 496.80,122.00 502.70,122.00 508.60,122.00 514.50,122.00 520.40,245.32 526.30,268.16 532.20,253.35 538.10,266.41 544.00,272.40 549.90,258.68 555.80,271.97 561.70,257.22 567.60,264.58 573.50,268.65 579.40,259.69 585.30,267.29 591.20,259.23 597.10,262.70 603.00,264.72 608.90,260.36 614.80,263.12 620.70,260.49 626.60,261.25 632.50,261.77 638.40,260.75 644.30,261.14 650.20,261.25 656.10,261.34 662.00,262.00" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <polyline points="72.00,262.00 77.90,268.50 83.80,274.55 89.70,279.95 95.60,285.70 101.50,291.59 107.40,297.69 113.30,303.91 119.20,310.20 125.10,316.46 131.00,322.63 136.90,328.70 142.80,340.81 148.70,350.36 154.60,352.24 160.50,352.81 166.40,352.74 172.30,351.74 178.20,350.41 184.10,348.82 190.00,347.63 195.90,346.83 201.80,346.68 207.70,354.31 213.60,361.34 219.50,356.38 225.40,350.22 231.30,343.22 237.20,334.52 243.10,325.20 249.00,315.06 254.90,303.93 260.80,292.42 266.70,280.35 272.60,271.22 278.50,263.54 284.40,255.47 290.30,247.38 296.20,239.26 302.10,231.27 308.00,223.44 313.90,215.89 319.80,208.60 325.70,201.50 331.60,195.00 337.50,186.22 343.40,175.63 349.30,169.24 355.20,163.56 361.10,158.81 367.00,155.03 372.90,151.76 378.80,149.49 384.70,148.23 390.60,147.62 396.50,148.14 402.40,160.27 408.30,186.93 414.20,193.78 420.10,197.26 426.00,200.57 431.90,203.84 437.80,207.07 443.70,210.18 449.60,213.20 455.50,216.13 461.40,219.05 467.30,214.80 473.20,196.17 479.10,194.22 485.00,198.04 490.90,202.30 496.80,206.73 502.70,211.29 508.60,216.08 514.50,220.89 520.40,225.73 526.30,230.56 532.20,226.26 538.10,190.04 544.00,184.07 549.90,195.52 555.80,207.32 561.70,218.85 567.60,230.07 573.50,240.57 579.40,250.61 585.30,259.73 591.20,267.67 597.10,275.40 603.00,285.71 608.90,289.33 614.80,286.87 620.70,284.13 626.60,281.35 632.50,278.51 638.40,275.63 644.30,272.75 650.20,269.89 656.10,266.23 662.00,262.00" fill="none" stroke="#0f766e" stroke-width="3"/>
+
+  <text x="60" y="149.33" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="end" fill="#0f766e">+1</text>
+  <text x="60" y="266.00" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="end" fill="#64748b">0</text>
+  <text x="60" y="382.67" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="end" fill="#0f766e">-1</text>
+  <text x="72" y="430" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">s = 0</text>
+  <text x="634" y="430" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">s = 1</text>
+  <text x="367.0" y="452" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#334155">normalized path coordinate</text>
+
+  <rect x="704" y="114" width="220" height="78" rx="8" fill="#f0fdfa" stroke="#99f6e4"/>
+  <circle cx="724" cy="140" r="5" fill="#0f766e"/>
+  <text x="738" y="145" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0f172a">DP3 peak: 0.98x limit</text>
+  <circle cx="724" cy="169" r="5" fill="#dc2626"/>
+  <text x="738" y="174" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#0f172a">TOPPRA peak: 77.18x limit</text>
+
+  <text x="704" y="224" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#334155">Peak |q_jerk| utilization</text>
+  <text x="704" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748b">Red labels are raw off-scale peaks.</text>
+  <text x="704" y="275" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J1</text>
+  <rect x="724" y="260" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="260" width="80.4" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="266" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.98</text>
+  <text x="816" y="281" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 77.18</text>
+  <text x="704" y="299" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J2</text>
+  <rect x="724" y="284" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="284" width="54.3" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="290" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.66</text>
+  <text x="816" y="305" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 46.60</text>
+  <text x="704" y="323" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J3</text>
+  <rect x="724" y="308" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="308" width="56.6" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="314" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.69</text>
+  <text x="816" y="329" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 46.26</text>
+  <text x="704" y="347" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J4</text>
+  <rect x="724" y="332" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="332" width="64.6" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="338" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.79</text>
+  <text x="816" y="353" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 24.10</text>
+  <text x="704" y="371" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J5</text>
+  <rect x="724" y="356" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="356" width="39.2" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="362" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.48</text>
+  <text x="816" y="377" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 20.57</text>
+  <text x="704" y="395" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#334155">J6</text>
+  <rect x="724" y="380" width="82" height="8" rx="4" fill="#e2e8f0"/>
+  <rect x="724" y="380" width="57.7" height="8" rx="4" fill="#0f766e"/>
+  <text x="816" y="386" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">DP3 0.70</text>
+  <text x="816" y="401" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">TOPPRA 36.56</text>
+
+  <rect x="56" y="474" width="868" height="48" rx="8" fill="#fff7ed" stroke="#fed7aa"/>
+  <text x="76" y="496" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9a3412">Algorithm advantage shown by joint data: DP3 optimizes and audits third-order joint constraints.</text>
+  <text x="76" y="514" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#9a3412">Second-order TOPPRA can produce finite-difference joint jerk spikes outside the admissible band.</text>
+</svg>

@@ -1,17 +1,17 @@
 from pathlib import Path
 
 
-def test_homepage_embeds_dp3_dp2_comparison_chart():
+def test_homepage_embeds_joint_data_comparison_chart():
     root = Path(__file__).resolve().parents[1]
     readme = (root / "README.md").read_text(encoding="utf-8")
-    asset_path = root / "assets" / "dp3-vs-dp2-comparison.svg"
+    asset_path = root / "assets" / "dp3-vs-toppra-joint-jerk.svg"
 
-    assert "![DP3 vs DP2 comparison](assets/dp3-vs-dp2-comparison.svg)" in readme
+    assert "![Joint jerk comparison](assets/dp3-vs-toppra-joint-jerk.svg)" in readme
     assert asset_path.exists()
 
     svg = asset_path.read_text(encoding="utf-8")
-    assert "14 T12A paths" in svg
-    assert "DP3 total: 194.35 s" in svg
-    assert "DP2 total: 196.00 s" in svg
-    assert "1.65 s faster" in svg
-    assert "0 violations" in svg
+    assert "Joint 1 jerk utilization" in svg
+    assert "q_jerk1" in svg
+    assert "DP3 peak: 0.98x limit" in svg
+    assert "TOPPRA peak: 77.18x limit" in svg
+    assert "third-order joint constraint" in svg
