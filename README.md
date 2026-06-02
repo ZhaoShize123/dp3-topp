@@ -6,7 +6,19 @@ low-level optimizer API and a higher-level workflow API that can load path and
 limit files, run the optimizer, audit constraints, and optionally write the same
 CSV/JSON artifacts used by the command-line tools.
 
-![Joint jerk comparison](assets/dp3-vs-toppra-joint-jerk.svg)
+## Normalized long-path joint comparisons
+
+The homepage figures use the harder `long_path_01` case, whose joint-space
+length is 8.61x longer than `path_01`. Each chart compares peak normalized
+joint utilization between DP3 and TOPPRA across all six joints.
+
+![Joint velocity comparison](assets/joint-velocity-normalized.svg)
+
+![Joint acceleration comparison](assets/joint-acceleration-normalized.svg)
+
+![Joint jerk comparison](assets/joint-jerk-normalized.svg)
+
+![Joint torque comparison](assets/joint-torque-normalized.svg)
 
 ## Install
 

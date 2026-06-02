@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-labelledby="title desc">
+  <title id="title">Joint jerk comparison on long_path_01</title>
+  <desc id="desc">Peak normalized utilization for q_jerk on long_path_01, comparing DP3 and TOPPRA across six joints.</desc>
+  <rect width="960" height="470" fill="#ffffff"/>
+  <rect x="24" y="24" width="912" height="422" rx="4" fill="#ffffff" stroke="#d1d5db"/>
+  <text x="52" y="62" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">Joint jerk: DP3 vs TOPPRA</text>
+  <text x="52" y="90" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">long_path_01, 8.61x longer than path_01, normalized utilization (q_jerk)</text>
+  <line x1="188" y1="110" x2="788" y2="110" stroke="#9ca3af" stroke-width="1"/>
+  <text x="188" y="102" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#6b7280">0</text>
+  <text x="248.0" y="102" font-family="Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" fill="#6b7280">1.0 limit</text>
+  <text x="788" y="102" font-family="Arial, Helvetica, sans-serif" font-size="11" text-anchor="end" fill="#6b7280">10</text>
+  <line x1="248.0" y1="110" x2="248.0" y2="394" stroke="#111827" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="188" y="414" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#0f766e">DP3</text>
+  <rect x="222" y="404" width="28" height="10" fill="#0f766e"/>
+  <text x="282" y="414" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#dc2626">TOPPRA</text>
+  <rect x="342" y="404" width="28" height="10" fill="#dc2626"/>
+  <text x="64" y="147" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J1</text>
+  <rect x="188" y="126" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="126" width="36.8" height="12" fill="#0f766e"/>
+  <text x="232.8" y="136" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.61</text>
+  <rect x="188" y="144" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="144" width="459.8" height="12" fill="#dc2626"/>
+  <text x="655.8" y="154" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">7.66</text>
+  <text x="64" y="193" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J2</text>
+  <rect x="188" y="172" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="172" width="46.4" height="12" fill="#0f766e"/>
+  <text x="242.4" y="182" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.77</text>
+  <rect x="188" y="190" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="190" width="536.4" height="12" fill="#dc2626"/>
+  <text x="732.4" y="200" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">8.94</text>
+  <text x="64" y="239" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J3</text>
+  <rect x="188" y="218" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="218" width="40.8" height="12" fill="#0f766e"/>
+  <text x="236.8" y="228" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.68</text>
+  <rect x="188" y="236" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="236" width="317.8" height="12" fill="#dc2626"/>
+  <text x="513.8" y="246" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">5.30</text>
+  <text x="64" y="285" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J4</text>
+  <rect x="188" y="264" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="264" width="23.3" height="12" fill="#0f766e"/>
+  <text x="219.3" y="274" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.39</text>
+  <rect x="188" y="282" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="282" width="295.3" height="12" fill="#dc2626"/>
+  <text x="491.3" y="292" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">4.92</text>
+  <text x="64" y="331" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J5</text>
+  <rect x="188" y="310" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="310" width="39.0" height="12" fill="#0f766e"/>
+  <text x="235.0" y="320" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.65</text>
+  <rect x="188" y="328" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="328" width="370.6" height="12" fill="#dc2626"/>
+  <text x="566.6" y="338" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">6.18</text>
+  <text x="64" y="377" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#374151">J6</text>
+  <rect x="188" y="356" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="356" width="30.1" height="12" fill="#0f766e"/>
+  <text x="226.1" y="366" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0f766e">0.50</text>
+  <rect x="188" y="374" width="600" height="12" fill="#f3f4f6"/>
+  <rect x="188" y="374" width="312.2" height="12" fill="#dc2626"/>
+  <text x="508.2" y="384" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#dc2626">5.20</text>
+  <text x="52" y="438" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#6b7280">Source: outputs/runs/t12a-long-path01-scaled-dp3/dp3_toppra_normalized_quantities.csv</text>
+</svg>
