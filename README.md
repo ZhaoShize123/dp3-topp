@@ -6,6 +6,8 @@ low-level optimizer API and a higher-level workflow API that can load path and
 limit files, run the optimizer, audit constraints, and optionally write the same
 CSV/JSON artifacts used by the command-line tools.
 
+![DP3 vs DP2 comparison](assets/dp3-vs-dp2-comparison.svg)
+
 ## Install
 
 ```powershell
