@@ -9,8 +9,9 @@ CSV/JSON artifacts used by the command-line tools.
 ## Normalized long-path joint comparisons
 
 The homepage figures use the harder `long_path_01` case, whose joint-space
-length is 8.61x longer than `path_01`. Each chart compares peak normalized
-joint utilization between DP3 and TOPPRA across all six joints.
+length is 8.61x longer than `path_01`. Each chart shows joint-data curves over
+normalized path coordinate, comparing normalized utilization between DP3 and
+TOPPRA across all six joints.
 
 ![Joint velocity comparison](assets/joint-velocity-normalized.svg)
 
