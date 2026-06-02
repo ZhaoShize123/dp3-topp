@@ -11,7 +11,8 @@ CSV/JSON artifacts used by the command-line tools.
 The homepage figures use the harder `long_path_01` case, whose joint-space
 length is 8.61x longer than `path_01`. Each chart shows joint-data curves over
 normalized path coordinate, comparing normalized utilization between DP3 and
-TOPPRA across all six joints.
+TOPPRA across all six joints. The torque chart uses `tau` divided by the
+velocity-dependent torque constraint from the long-path run artifact.
 
 ![Joint velocity comparison](assets/joint-velocity-normalized.svg)
 

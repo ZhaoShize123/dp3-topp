@@ -5,8 +5,9 @@ CHARTS = {
     "joint_velocity": ("Joint velocity", "q_dot", "joint-velocity-normalized.svg"),
     "joint_acceleration": ("Joint acceleration", "q_ddot", "joint-acceleration-normalized.svg"),
     "joint_jerk": ("Joint jerk", "q_jerk", "joint-jerk-normalized.svg"),
-    "joint_torque": ("Joint torque", "tau", "joint-torque-normalized.svg"),
 }
+
+TORQUE_CHART = ("Joint torque", "tau", "joint-torque-normalized.svg")
 
 
 def test_homepage_embeds_normalized_long_path_joint_curve_charts():
@@ -35,3 +36,21 @@ def test_homepage_embeds_normalized_long_path_joint_curve_charts():
             assert f"J{axis}" in svg
             assert f"DP3 J{axis}" in svg
             assert f"TOPPRA J{axis}" in svg
+
+    title, quantity, filename = TORQUE_CHART
+    assert f"![{title} comparison](assets/{filename})" in readme
+    torque_svg = (root / "assets" / filename).read_text(encoding="utf-8")
+    assert "torque constraint comparison" in torque_svg
+    assert "velocity-dependent torque constraint" in torque_svg
+    assert "tau / torque constraint" in torque_svg
+    assert "upper torque constraint" in torque_svg
+    assert "lower torque constraint" in torque_svg
+    assert "normalized path coordinate s" in torque_svg
+    assert "normalized torque utilization" in torque_svg
+    assert quantity in torque_svg
+    for axis in range(1, 7):
+        assert f"J{axis}" in torque_svg
+        assert f"DP3 J{axis}" in torque_svg
+        assert f"TOPPRA J{axis}" in torque_svg
+        assert f"+1 torque constraint J{axis}" in torque_svg
+        assert f"-1 torque constraint J{axis}" in torque_svg
