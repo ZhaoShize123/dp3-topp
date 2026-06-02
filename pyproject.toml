@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dp3-topp"
+version = "0.1.0"
+description = "TRO 2019 DP3 path-following reproduction for the local T12A MuJoCo model"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "mujoco",
+    "toppra",
+]
+
+[project.scripts]
+dp3-validate-data = "dp3_topp.cli:validate_data_main"
+dp3-build-path = "dp3_topp.cli:build_path_main"
+dp3-run = "dp3_topp.cli:run_main"
+dp3-plot = "dp3_topp.plotting:plot_main"
+dp3-write-limits-template = "dp3_topp.cli:write_limits_template_main"
+dp3-write-path-index-template = "dp3_topp.cli:write_path_index_template_main"
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "pytest",
+    "tomli; python_version < '3.11'",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

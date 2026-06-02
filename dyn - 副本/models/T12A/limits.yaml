@@ -1,0 +1,146 @@
+robot: T12A
+selected_by: codex
+selection_note: Finite selected experiment limits for MuJoCo/DP3 reproduction runs;
+  not proprietary manufacturer or paper Table II limits.
+units:
+  q_position: rad
+  q_dot_abs: rad/s
+  q_ddot_abs: rad/s^2
+  q_jerk_abs: rad/s^3
+  tau_abs: N*m
+  tau_rate_abs: N*m/s
+  mechanical_power: W
+joint_names:
+- joint_1
+- joint_2
+- joint_3
+- joint_4
+- joint_5
+- joint_6
+q_position:
+  lower:
+  - -2.967
+  - -1.745
+  - -2.792
+  - -3.316
+  - -2.268
+  - -6.283
+  upper:
+  - 2.967
+  - 1.745
+  - 2.792
+  - 3.316
+  - 2.268
+  - 6.283
+q_dot_abs:
+- 5.0
+- 5.0
+- 5.0
+- 6.0
+- 6.0
+- 8.0
+q_ddot_abs:
+- 120.0
+- 120.0
+- 140.0
+- 180.0
+- 180.0
+- 220.0
+q_jerk_abs:
+- 3000.0
+- 3000.0
+- 3500.0
+- 4500.0
+- 4500.0
+- 5500.0
+tau_abs:
+- 220.0
+- 220.0
+- 300.0
+- 75.0
+- 32.0
+- 10.0
+tau_rate_abs:
+- 10000000.0
+- 10000000.0
+- 10000000.0
+- 8000000.0
+- 8000000.0
+- 6000000.0
+mechanical_power:
+  lower: -100000000.0
+  upper: 100000000.0
+torque_speed_breakpoints:
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+- - - 0.0
+    - 10000.0
+  - - 100.0
+    - 9000.0
+  - - 300.0
+    - 7000.0
+friction:
+  coulomb:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  viscous:
+  - 0.02
+  - 0.02
+  - 0.02
+  - 0.015
+  - 0.015
+  - 0.01
+motor:
+  gear_ratio:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  torque_constant:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  stator_resistance:
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.04
+  - 0.04
+  - 0.03

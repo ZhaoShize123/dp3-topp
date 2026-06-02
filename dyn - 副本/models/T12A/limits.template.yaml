@@ -1,0 +1,131 @@
+robot: T12A
+units:
+  q_position: rad
+  q_dot_abs: rad/s
+  q_ddot_abs: rad/s^2
+  q_jerk_abs: rad/s^3
+  tau_abs: N*m
+  tau_rate_abs: N*m/s
+  mechanical_power: W
+q_dot_abs:
+- null
+- null
+- null
+- null
+- null
+- null
+q_ddot_abs:
+- null
+- null
+- null
+- null
+- null
+- null
+q_jerk_abs:
+- null
+- null
+- null
+- null
+- null
+- null
+tau_abs:
+- null
+- null
+- null
+- null
+- null
+- null
+tau_rate_abs:
+- null
+- null
+- null
+- null
+- null
+- null
+mechanical_power:
+  lower: null
+  upper: null
+torque_speed_breakpoints:
+- - - 0.0
+    - null
+  - - null
+    - null
+- - - 0.0
+    - null
+  - - null
+    - null
+- - - 0.0
+    - null
+  - - null
+    - null
+- - - 0.0
+    - null
+  - - null
+    - null
+- - - 0.0
+    - null
+  - - null
+    - null
+- - - 0.0
+    - null
+  - - null
+    - null
+friction:
+  coulomb:
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  viscous:
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+motor:
+  gear_ratio:
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  torque_constant:
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  stator_resistance:
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+joint_names:
+- joint_1
+- joint_2
+- joint_3
+- joint_4
+- joint_5
+- joint_6
+q_position:
+  lower:
+  - -2.967
+  - -1.745
+  - -2.792
+  - -3.316
+  - -2.268
+  - -6.283
+  upper:
+  - 2.967
+  - 1.745
+  - 2.792
+  - 3.316
+  - 2.268
+  - 6.283

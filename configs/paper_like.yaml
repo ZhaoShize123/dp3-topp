@@ -1,0 +1,29 @@
+method: dp3
+input: ../dyn - 副本/Offline_Traj.txt
+model: ../dyn - 副本/models/T12A/T12A-14.xml
+ee_body: link_6
+ee_site: tcp
+limits: ../dyn - 副本/models/T12A/limits.yaml
+out_dir: ../outputs/runs/t12a-paper-like-dp3
+joint_path_out: ../outputs/runs/t12a-paper-like-dp3/joint_path.csv
+ns: 40
+nz: 500
+nch: 20
+z_max: 0.01
+constraint_check_points: 600
+require_full_reproduction_data: true
+check_ik: true
+ik_check_samples: 40
+k1: 1.0
+k2: 0.0
+tau_rate_dt: 1.0e-5
+ik_max_iters: 200
+ik_pos_tol: 1.0e-4
+ik_ori_tol: 1.0e-3
+ik_damping: 1.0e-4
+ik_step_scale: 0.6
+ik_orientation_weight: 0.0
+tcp_offset_x: 0.0
+tcp_offset_y: 0.0
+tcp_offset_z: 0.0
+require_ik_convergence: true

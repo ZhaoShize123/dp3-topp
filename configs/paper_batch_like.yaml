@@ -1,0 +1,16 @@
+method: compare
+paths: ../dyn - 副本/paths
+path_index: ../dyn - 副本/paths/path_index.yaml
+expected_path_count: 14
+model: ../dyn - 副本/models/T12A/T12A-14.xml
+limits: ../dyn - 副本/models/T12A/limits.yaml
+out_dir: ../outputs/runs/t12a-paper-like-batch
+ns: 40
+nz: 500
+nch: 20
+z_max: 0.01
+constraint_check_points: 600
+require_full_reproduction_data: true
+k1: 1.0
+k2: 0.0
+tau_rate_dt: 1.0e-5
