@@ -68,6 +68,12 @@ run = run_dp3(
 print(run.status, run.summary["total_time"])
 ```
 
+A runnable in-memory demo is available at `examples/library_call_demo.py`:
+
+```powershell
+python examples/library_call_demo.py --out-dir outputs/demo_library_call
+```
+
 ## CLI
 
 ```powershell
