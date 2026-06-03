@@ -39,7 +39,34 @@
 | `cartesian_path.py` | 可选路径构建层。把 Cartesian pose table 通过 MuJoCo IK 变成 `PathData`。 |
 | `README.md` | 包主页和使用说明，当前包含长复杂路径的归一化关节速度、加速度、jerk 和力矩对比图。 |
 
-## 3. 总体数据流
+## 3. 图文速览：算法实现的几张关键图
+
+这一节先把后文的核心实现用图集中说明。所有图都对应当前源码中的真实函数和 artifact，不是额外设计出来的抽象流程。
+
+### 3.1 五层实现视图
+
+```mermaid
+flowchart TD
+    L1["输入层<br/>PathData, ConstraintLimits, MujocoRobotDynamics"] --> L2["优化层<br/>optimize_dp3 / optimize_dp2"]
+    L2 --> L3["分段层<br/>C2LinearZ, C3QuadraticSpeed, C4CubicSpeed"]
+    L3 --> L4["审计层<br/>path_time_derivatives, inverse_dynamics, audit_constraints"]
+    L4 --> L5["输出层<br/>TrajectoryResult, quantities.csv, summary.json, SVG charts"]
+
+    L1 -. "api.py / cli.py" .-> L2
+    L2 -. "_optimize_grid" .-> L3
+    L3 -. "_audit_profile_segment" .-> L4
+    L5 -. "plotting.py / README.md" .-> L1
+```
+
+这张图可以理解为库化后的架构边界：
+
+- 输入层负责把路径、约束、机器人模型变成强类型对象。
+- 优化层负责在 `z-s` 网格上做动态规划。
+- 分段层负责把离散状态转成可计算 `z/z_s/z_ss` 的连续剖面。
+- 审计层负责把剖面换算成关节速度、加速度、jerk、力矩、力矩变化率和功率，再做约束过滤。
+- 输出层负责把结果写成 CSV/JSON，并进一步生成主页里的关节数据图。
+
+### 3.2 总体数据流
 
 ```mermaid
 flowchart TD
@@ -179,6 +206,22 @@ lower < 0 < upper
 ### 6.1 速度相关力矩边界
 
 当前实现里的力矩约束不是只能是固定 `tau_abs`。如果 `limits.yaml` 中配置了 `torque_speed_breakpoints`，`ConstraintLimits.torque_abs_limit(q_dot)` 会根据关节速度插值得到速度相关的力矩上限。
+
+速度相关力矩边界示意：
+
+```mermaid
+flowchart LR
+    A["关节速度 q_dot"] --> B["abs(q_dot)"]
+    B --> C["torque_speed_breakpoints 查表插值"]
+    D["motor_gear_ratio<br/>可选电机侧换算"] --> C
+    E["静态 tau_lower / tau_upper"] --> F["limits.torque_bounds(q_dot)"]
+    C --> F
+    G["tau_abs 上限截断"] --> F
+    F --> H["速度相关上下界<br/>tau_lower(q_dot), tau_upper(q_dot)"]
+    I["实际力矩 tau"] --> J["signed_bound_utilization"]
+    H --> J
+    J --> K["tau_utilization<br/>用于力矩约束对比曲线"]
+```
 
 这也是 README 主页力矩图里提到的 `velocity-dependent torque constraint`。力矩利用率不是简单的 `tau / tau_abs`，而是：
 
@@ -526,6 +569,35 @@ cost[-1, 0] = 0.0
 - `stored_z_s[i, j]`：从该状态出发的最佳段在左端点的 `z_s`，供前一段构造更高阶连续性使用。
 - `cost[-1, 0] = 0`：只有终点边界速度是合法终态。
 
+DP 状态转移图：
+
+```mermaid
+flowchart LR
+    subgraph S_i["grid_s[i]"]
+        A0["state (i, j)<br/>z = grid_z[i,j]"]
+    end
+
+    subgraph S_next["grid_s[i+1]"]
+        B0["candidate (i+1,0)"]
+        B1["candidate (i+1,l)"]
+        B2["candidate (i+1,nz-1)"]
+    end
+
+    A0 --> C0["_make_segment_profile"]
+    B1 --> C0
+    C0 --> C1["profile.evaluate(s)<br/>z, z_s, z_ss"]
+    C1 --> C2["_audit_profile_segment"]
+    C2 --> C3{"audit.ok?"}
+    C3 -- "no" --> X["discard edge"]
+    C3 -- "yes" --> C4["_segment_objective_cost"]
+    C4 --> C5["candidate cost<br/>segment_cost + cost[i+1,l]"]
+    C5 --> C6{"smaller than best?"}
+    C6 -- "yes" --> C7["store policy[i,j]=l<br/>store cost and z_s"]
+    C6 -- "no" --> X
+```
+
+图里的每条边都是真实候选段：只有能通过 `audit_constraints` 的边才有资格进入 `policy`。这也是 DP3 和只做后验检查的实现最关键的区别之一。
+
 ### 12.6 反向递推
 
 DP 从倒数第二个路径网格点向前递推。DP3 的普通递推从 `i = ns - 2` 到 `i = 2`，把前两段交给 `_solve_dp3_algorithm3_start` 特殊处理。DP2 没有特殊起始处理，从 `i = ns - 2` 一直递推到 `i = 0`。
@@ -577,6 +649,22 @@ ProfileValues(
     s_dot=...
 )
 ```
+
+C2/C4/C3 分段示意：
+
+```mermaid
+flowchart LR
+    P0["s0<br/>z_start"] --> S0["segment 0<br/>C2LinearZ<br/>允许零速起步"]
+    S0 --> P1["s1<br/>z_mid<br/>保存 left_slope"]
+    P1 --> S1["segment 1<br/>C4CubicSpeed<br/>连接左右 z_s"]
+    S1 --> P2["s2<br/>进入普通 DP policy"]
+    P2 --> S2["segment 2..ns-3<br/>C3QuadraticSpeed<br/>使用 next_z_s"]
+    S2 --> PN1["s(ns-2)"]
+    PN1 --> SN["last segment<br/>C2LinearZ<br/>允许终点零速"]
+    SN --> PN["s_end<br/>z_end"]
+```
+
+这张图对应 `_reconstruct_profile` 中的段类型选择：DP3 的第一段和最后一段用 C2，第二段用 C4，中间段尽量用 C3。C2 负责处理可能的零速边界，C4 负责起始处斜率衔接，C3 负责大部分路径上的三阶剖面。
 
 ### 13.1 `C2LinearZ`
 
@@ -679,6 +767,28 @@ _solve_dp3_algorithm3_start
 ## 15. 约束审计：从 profile 到 `audit_constraints`
 
 每个候选段都会调用 `_audit_profile_segment`：
+
+约束审计链路图：
+
+```mermaid
+flowchart TD
+    A["profile<br/>C2 / C3 / C4"] --> B["profile.evaluate(s samples)"]
+    B --> C["z, z_s, z_ss, s_dot"]
+    D["PathData<br/>q, q_s, q_ss, q_sss"] --> E["_sample_matrix"]
+    E --> F["path_time_derivatives"]
+    C --> F
+    F --> G["q_dot, q_ddot, q_jerk"]
+    G --> H{"robot provided?"}
+    H -- "yes" --> I["MujocoRobotDynamics.inverse_dynamics<br/>torque_rate_finite_difference"]
+    H -- "no" --> J["rigid tau = 0<br/>rigid tau_rate = 0"]
+    I --> K["add friction torque<br/>add friction torque_rate"]
+    J --> K
+    K --> L["tau, tau_rate, mechanical_power"]
+    G --> M["audit_constraints"]
+    L --> M
+    N["ConstraintLimits<br/>including torque_bounds(q_dot)"] --> M
+    M --> O["ConstraintAudit<br/>ok, max_utilization, violations"]
+```
 
 ```python
 s = np.linspace(profile.s0, profile.s1, nch)
@@ -1011,6 +1121,24 @@ JointTorqueConstraint(
 ### 22.2 README 主页图
 
 当前 README 的主页图说明是：
+
+输出文件到主页图的数据流：
+
+```mermaid
+flowchart TD
+    A["dp3-run / run_dp3"] --> B["trajectory.csv<br/>t, s, z, z_s, z_ss"]
+    A --> C["quantities.csv<br/>q, q_dot, q_ddot, q_jerk, tau, tau_rate"]
+    A --> D["constraint_utilization.csv<br/>normalized utilization"]
+    A --> E["summary.json<br/>config and reproduction_sources"]
+    E --> F["plotting.py<br/>recover path, limits, model"]
+    B --> F
+    C --> F
+    D --> F
+    F --> G["TOPPRA reference<br/>MVC/profile when available"]
+    F --> H["assets/*.svg<br/>normalized joint curves"]
+    G --> H
+    H --> I["README.md homepage figures"]
+```
 
 - 使用较难的 `long_path_01`。
 - 该路径关节空间长度是 `path_01` 的 8.61 倍。

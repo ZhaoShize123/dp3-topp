@@ -23,6 +23,14 @@ def test_chinese_algorithm_flow_doc_covers_core_pipeline():
         "dp3-run",
         "TOPPRA",
         "DP2",
+        "图文速览",
+        "DP 状态转移图",
+        "C2/C4/C3 分段示意",
+        "约束审计链路图",
+        "速度相关力矩边界示意",
+        "输出文件到主页图的数据流",
     ]
     for term in required_terms:
         assert term in doc
+
+    assert doc.count("```mermaid") >= 6
