@@ -22,6 +22,19 @@ velocity-dependent torque constraint from the long-path run artifact.
 
 ![Joint torque comparison](assets/joint-torque-normalized.svg)
 
+## Complex torque and jerk constraint sweep
+
+The multi-case sweep runs DP3 on the hardest available long path plus the most
+complex indexed joint paths under nominal, velocity-dependent torque-drop,
+tight-jerk, and combined torque/jerk constraints. It publishes a compact joint
+data gallery for velocity, acceleration, jerk, torque, and torque-rate curves.
+See `docs/dp3_complex_constraint_sweep_zh.md` for the Chinese experiment notes
+and reproduction command.
+
+![Long path torque-drop joint torque](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_torque.svg)
+
+![Long path tight-jerk joint jerk](assets/complex-constraint-sweep/long_path_01_tight_jerk_joint_jerk.svg)
+
 ## Install
 
 ```powershell
