@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Algorithm output as charts</title>
+  <desc id="desc">A robot hands result scrolls to a clean chart board with joint curves.</desc>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <rect x="120" y="110" width="960" height="500" rx="34" fill="#ffffff" stroke="#cbd5e1" stroke-width="6"/>
+  <rect x="170" y="160" width="430" height="390" rx="24" fill="#fefce8" stroke="#eab308" stroke-width="5"/>
+  <path d="M220 250 H545 M220 310 H545 M220 370 H545 M220 430 H545" stroke="#eab308" stroke-width="5" stroke-linecap="round" opacity=".75"/>
+  <g transform="translate(655 165)">
+    <rect x="0" y="0" width="365" height="170" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="4"/>
+    <path d="M35 120 C75 85 110 145 150 92 C190 38 235 110 280 60 C310 28 335 40 345 35" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+    <path d="M35 132 H335 M35 30 V132" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(655 375)">
+    <rect x="0" y="0" width="365" height="170" rx="20" fill="#fff1f2" stroke="#e11d48" stroke-width="4"/>
+    <path d="M35 105 C70 35 120 42 150 105 C184 175 230 152 260 90 C292 24 325 60 345 42" fill="none" stroke="#e11d48" stroke-width="6" stroke-linecap="round"/>
+    <path d="M35 132 H335 M35 30 V132" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(250 540)">
+    <rect x="0" y="32" width="105" height="50" rx="16" fill="#2563eb"/>
+    <circle cx="24" cy="88" r="14" fill="#111827"/>
+    <circle cx="81" cy="88" r="14" fill="#111827"/>
+    <rect x="27" y="0" width="50" height="42" rx="12" fill="#93c5fd"/>
+    <circle cx="42" cy="20" r="4" fill="#111827"/>
+    <circle cx="62" cy="20" r="4" fill="#111827"/>
+  </g>
+  <path d="M360 580 C440 545 500 520 590 500" fill="none" stroke="#16a34a" stroke-width="9" stroke-linecap="round" stroke-dasharray="22 16"/>
+  <g fill="#dcfce7" stroke="#16a34a" stroke-width="5">
+    <circle cx="1080" cy="120" r="36"/>
+    <path d="M1063 120 l13 14 l26 -31" fill="none" stroke="#16a34a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

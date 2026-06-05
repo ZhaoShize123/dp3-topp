@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Constraint gates</title>
+  <desc id="desc">A robot path passes through friendly gates representing velocity, acceleration, jerk, torque and power constraints.</desc>
+  <rect width="1200" height="720" fill="#fbfbf8"/>
+  <path d="M70 574 C240 480 370 535 520 445 C665 360 780 392 930 300 C1015 248 1090 220 1160 205" fill="none" stroke="#d1d5db" stroke-width="70" stroke-linecap="round"/>
+  <path d="M70 574 C240 480 370 535 520 445 C665 360 780 392 930 300 C1015 248 1090 220 1160 205" fill="none" stroke="#ffffff" stroke-width="42" stroke-linecap="round"/>
+  <g transform="translate(180 430)">
+    <rect x="0" y="0" width="112" height="150" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="6"/>
+    <circle cx="56" cy="52" r="28" fill="#bfdbfe"/>
+    <path d="M42 62 Q56 40 70 62" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+    <path d="M24 112 H88" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(420 350)">
+    <rect x="0" y="0" width="112" height="150" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="6"/>
+    <path d="M30 95 L56 35 L82 95 Z" fill="#bbf7d0" stroke="#16a34a" stroke-width="6"/>
+    <circle cx="56" cy="112" r="10" fill="#16a34a"/>
+  </g>
+  <g transform="translate(650 305)">
+    <rect x="0" y="0" width="112" height="150" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="6"/>
+    <path d="M28 80 C45 35 70 35 86 80 C70 60 45 100 28 80 Z" fill="#fde68a" stroke="#d97706" stroke-width="6"/>
+    <path d="M42 114 H70" stroke="#d97706" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(880 210)">
+    <rect x="0" y="0" width="112" height="150" rx="18" fill="#fee2e2" stroke="#dc2626" stroke-width="6"/>
+    <circle cx="56" cy="75" r="34" fill="#fecaca" stroke="#dc2626" stroke-width="6"/>
+    <path d="M38 75 H74" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+    <path d="M56 57 V93" stroke="#dc2626" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(76 514)">
+    <rect x="0" y="28" width="96" height="48" rx="15" fill="#4f46e5"/>
+    <circle cx="22" cy="82" r="13" fill="#111827"/>
+    <circle cx="74" cy="82" r="13" fill="#111827"/>
+    <rect x="24" y="0" width="48" height="38" rx="11" fill="#c7d2fe"/>
+    <circle cx="38" cy="18" r="4" fill="#111827"/>
+    <circle cx="58" cy="18" r="4" fill="#111827"/>
+  </g>
+  <g fill="#e0f2fe" stroke="#0284c7" stroke-width="4">
+    <circle cx="1045" cy="178" r="28"/>
+    <path d="M1032 178 h26 m-13 -13 v26" stroke="#0284c7" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

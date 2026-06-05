@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">DP grid as stepping stones</title>
+  <desc id="desc">A robot crosses a river by choosing safe stepping stones across a z-s grid.</desc>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <path d="M0 120 C170 80 250 180 390 145 C560 100 660 180 820 130 C1000 75 1085 120 1200 90 L1200 720 L0 720 Z" fill="#bfe8ff"/>
+  <path d="M0 520 C180 470 300 590 450 535 C625 470 690 590 850 525 C1025 455 1110 510 1200 460" fill="none" stroke="#60a5fa" stroke-width="48" opacity=".4"/>
+  <g fill="#d6d3d1" stroke="#78716c" stroke-width="4">
+    <ellipse cx="165" cy="560" rx="60" ry="32"/>
+    <ellipse cx="300" cy="455" rx="58" ry="30"/>
+    <ellipse cx="440" cy="365" rx="60" ry="32"/>
+    <ellipse cx="590" cy="300" rx="58" ry="30"/>
+    <ellipse cx="740" cy="260" rx="60" ry="32"/>
+    <ellipse cx="895" cy="225" rx="58" ry="30"/>
+    <ellipse cx="1040" cy="190" rx="62" ry="32"/>
+    <ellipse cx="300" cy="610" rx="48" ry="25" opacity=".55"/>
+    <ellipse cx="470" cy="520" rx="48" ry="25" opacity=".55"/>
+    <ellipse cx="620" cy="440" rx="48" ry="25" opacity=".55"/>
+    <ellipse cx="800" cy="390" rx="48" ry="25" opacity=".55"/>
+    <ellipse cx="965" cy="345" rx="48" ry="25" opacity=".55"/>
+  </g>
+  <path d="M165 560 C245 510 260 490 300 455 C380 405 395 392 440 365 C515 326 535 318 590 300 C660 276 690 270 740 260 C805 248 840 238 895 225 C955 212 990 202 1040 190" fill="none" stroke="#16a34a" stroke-width="12" stroke-linecap="round"/>
+  <g transform="translate(95 500)">
+    <rect x="0" y="20" width="86" height="46" rx="14" fill="#2563eb"/>
+    <circle cx="20" cy="72" r="12" fill="#111827"/>
+    <circle cx="66" cy="72" r="12" fill="#111827"/>
+    <rect x="20" y="0" width="46" height="34" rx="10" fill="#93c5fd"/>
+    <circle cx="34" cy="16" r="4" fill="#111827"/>
+    <circle cx="52" cy="16" r="4" fill="#111827"/>
+  </g>
+  <g fill="none" stroke="#1d4ed8" stroke-width="3" opacity=".45">
+    <path d="M120 110 V630"/>
+    <path d="M270 110 V630"/>
+    <path d="M420 110 V630"/>
+    <path d="M570 110 V630"/>
+    <path d="M720 110 V630"/>
+    <path d="M870 110 V630"/>
+    <path d="M1020 110 V630"/>
+    <path d="M80 200 H1120"/>
+    <path d="M80 320 H1120"/>
+    <path d="M80 440 H1120"/>
+    <path d="M80 560 H1120"/>
+  </g>
+  <g fill="#fef3c7" stroke="#d97706" stroke-width="4">
+    <path d="M112 132 h110 l-22 38 h-88 z"/>
+    <path d="M982 112 h110 l-22 38 h-88 z"/>
+  </g>
+</svg>

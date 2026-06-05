@@ -6,6 +6,9 @@ low-level optimizer API and a higher-level workflow API that can load path and
 limit files, run the optimizer, audit constraints, and optionally write the same
 CSV/JSON artifacts used by the command-line tools.
 
+For a simpler Chinese walkthrough with visual metaphors, see
+`docs/dp3_easy_explanation_zh.md`.
+
 ## Normalized long-path joint comparisons
 
 The homepage figures use the harder `long_path_01` case, whose joint-space
