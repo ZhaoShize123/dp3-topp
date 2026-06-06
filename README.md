@@ -8,34 +8,31 @@ CSV/JSON artifacts used by the command-line tools.
 
 For a simpler Chinese walkthrough of the implementation, see
 `docs/dp3_easy_explanation_zh.md`. The GitHub homepage figures below use
-joint-data plots from torque-constrained DP3 planning runs.
+normalized joint-data plots from constrained DP3 planning runs.
 
-## Torque-constrained DP3 joint-data plots
+## Normalized limit-utilization joint comparisons
 
-These homepage figures use the same difficult `long_path_01_torque_speed_drop`
-case from `examples/complex_constraint_sweep.py`: DP3 plans on `long_path_01`
-under a velocity-dependent torque constraint, then publishes joint velocity,
-acceleration, jerk, torque, and torque-rate curves for all six joints. See
-`docs/dp3_complex_constraint_sweep_zh.md` for the Chinese experiment notes and
-reproduction command.
+These homepage figures use the difficult `long_path_01` case, whose joint-space
+length is 8.61x longer than `path_01`. Y axis is each joint quantity divided by its corresponding limit.
+The +1 and -1 curves are the normalized upper/lower constraint boundaries.
+DP3 is drawn with solid curves, TOPPRA is drawn with dashed curves, and
+upper/lower limit lines are shown at +1 and -1.
 
-![Torque-constrained joint velocity](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_velocity.svg)
+![Joint velocity limit utilization comparison](assets/joint-velocity-normalized.svg)
 
-![Torque-constrained joint acceleration](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_acceleration.svg)
+![Joint acceleration limit utilization comparison](assets/joint-acceleration-normalized.svg)
 
-![Torque-constrained joint jerk](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_jerk.svg)
+![Joint jerk limit utilization comparison](assets/joint-jerk-normalized.svg)
 
-![Torque-constrained joint torque](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_torque.svg)
+![Joint torque limit utilization comparison](assets/joint-torque-normalized.svg)
 
-![Torque-constrained joint torque rate](assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_torque_rate.svg)
+## Complex torque and jerk constraint sweep
 
-## Torque constraint utilization comparison
-
-The torque comparison plot keeps the torque-limit envelope visible: DP3 and
-TOPPRA are normalized by the velocity-dependent torque constraint, with +1/-1
-constraint lines included for every joint.
-
-![Torque constraint comparison](assets/joint-torque-normalized.svg)
+For additional stress cases under nominal, velocity-dependent torque-drop,
+tight-jerk, and combined torque/jerk constraints, see
+`docs/dp3_complex_constraint_sweep_zh.md`. The published gallery in
+`assets/complex-constraint-sweep/` keeps the raw planned joint velocity,
+acceleration, jerk, torque, and torque-rate curves for those scenarios.
 
 ## Install
 

@@ -37,7 +37,7 @@
 | `cli.py` | 命令行入口。`dp3-run`、`dp3-build-path`、`dp3-validate-data` 等都在这里实现。 |
 | `plotting.py` | 从 run artifact 生成 SVG 图，包括关节量曲线、约束利用率、DP3/DP2 对比和 TOPPRA MVC 参考曲线。 |
 | `cartesian_path.py` | 可选路径构建层。把 Cartesian pose table 通过 MuJoCo IK 变成 `PathData`。 |
-| `README.md` | 包主页和使用说明，当前包含力矩约束长路径下的关节速度、加速度、jerk、力矩、力矩变化率图，并保留带力矩约束上下界的归一化力矩对比图。 |
+| `README.md` | 包主页和使用说明，当前包含 `long_path_01` 的归一化 DP3/TOPPRA 关节速度、加速度、jerk、力矩 limit-utilization 对比图；TOPPRA 用虚线，Y 轴是 `quantity / limit`，并画出 `+1/-1` 上下约束线。 |
 
 ## 3. 图文速览：算法实现的几张关键图
 
@@ -1120,7 +1120,7 @@ JointTorqueConstraint(
 
 ### 22.2 README 主页图
 
-当前 README 的主页图说明是：主页证据图优先使用 `long_path_01_torque_speed_drop` 力矩约束规划结果，展示同一条复杂长路径下的关节速度、加速度、jerk、力矩和力矩变化率；力矩对比图继续使用 `tau / torque constraint` 的归一化利用率曲线，并画出上下力矩约束线。
+当前 README 的主页图说明是：主页证据图使用 `long_path_01` 的归一化 limit-utilization 曲线。关节速度、加速度、jerk 和力矩都除以对应约束上限或速度相关力矩约束；Y 轴显示 `quantity / limit`，`+1/-1` 是上下约束边界。DP3 用实线，TOPPRA 用虚线。复杂 torque/jerk sweep 的原始关节曲线仍保留在 `docs/dp3_complex_constraint_sweep_zh.md` 和 `assets/complex-constraint-sweep/` 中，作为更多压力场景的补充证据。
 
 输出文件到主页图的数据流：
 
@@ -1135,22 +1135,22 @@ flowchart TD
     C --> F
     D --> F
     F --> G["TOPPRA reference<br/>MVC/profile when available"]
-    F --> H["assets/complex-constraint-sweep/*.svg<br/>torque-constrained joint curves"]
-    F --> J["assets/joint-torque-normalized.svg<br/>torque-limit utilization"]
+    F --> H["assets/joint-*-normalized.svg<br/>DP3/TOPPRA limit-utilization"]
+    F --> K["assets/complex-constraint-sweep/*.svg<br/>raw stress-case joint curves"]
     G --> H
     H --> I["README.md homepage figures"]
-    J --> I
+    K --> L["complex sweep docs/gallery"]
 ```
 
-- 使用较难的 `long_path_01`，主页实际关节曲线采用 `torque_speed_drop` 约束场景。
-- 该路径关节空间长度是 `path_01` 的 8.61 倍。
-- 速度、加速度、jerk、力矩、力矩变化率图来自力矩约束规划后的 `quantities.csv`。
-- 力矩约束利用率对比图的横轴是归一化路径坐标 `s`。
+- 使用较难的 `long_path_01`，该路径关节空间长度是 `path_01` 的 8.61 倍。
+- 主页图横轴是归一化路径坐标 `s`。
+- 主页图纵轴是 `quantity / limit`：`q_dot / q_dot limit`、`q_ddot / q_ddot limit`、`q_jerk / q_jerk limit` 和 `tau / torque constraint`。
+- TOPPRA 用虚线，DP3 用实线。
+- `+1/-1` 上下约束线必须显示，读者能直接判断曲线是否接近或触碰约束。
 - 图是关节数据曲线，不是装饰型图。
-- 包含关节速度、加速度、jerk、实际力矩、力矩变化率和力矩约束利用率对比。
-- 力矩图使用速度相关力矩约束归一化，即 `tau / torque constraint`。
+- `assets/complex-constraint-sweep/` 继续保存 nominal、torque-drop、tight-jerk、combined torque/jerk 等压力场景下的原始关节速度、加速度、jerk、力矩和力矩变化率曲线。
 
-这和用户要求的“关节数据曲线图、不要花里胡哨、在一条难的复杂长路径上归一化、力矩曲线要采用力矩约束的对比力距曲线”一致。源码层面应优先从 run artifact 的 `quantities.csv`、`constraint_utilization.csv`、limits 和 TOPPRA 曲线共同生成这些 SVG；README 主页不再把寓言图作为算法效果证据图。
+这和用户要求的“虚线展示 TOPPRA、同时展示上下约束、进行归一化处理、Y 轴显示与 limit 的比值、关节数据曲线图、不要花里胡哨、力矩曲线采用力矩约束的对比力矩曲线”一致。源码层面应优先从 run artifact 的 `quantities.csv`、`constraint_utilization.csv`、limits 和 TOPPRA 曲线共同生成这些 SVG；README 主页不再把寓言图作为算法效果证据图。
 
 ### 22.3 为什么 jerk 图能体现 DP3 优势
 
