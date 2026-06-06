@@ -22,9 +22,19 @@ def test_complex_constraint_sweep_script_documents_torque_and_jerk_cases():
     assert "outputs/runs/dp3-complex-constraint-sweep/gallery.html" in doc
 
     readme = (root / "README.md").read_text(encoding="utf-8")
-    assert "Complex torque and jerk constraint sweep" in readme
-    assert "assets/complex-constraint-sweep/long_path_01_torque_speed_drop_joint_torque.svg" in readme
-    assert "assets/complex-constraint-sweep/long_path_01_tight_jerk_joint_jerk.svg" in readme
+    assert "Torque-constrained DP3 joint-data plots" in readme
+    assert "assets/simple-story/" not in readme
+    for plot_name in (
+        "joint_velocity",
+        "joint_acceleration",
+        "joint_jerk",
+        "joint_torque",
+        "joint_torque_rate",
+    ):
+        assert (
+            f"assets/complex-constraint-sweep/long_path_01_torque_speed_drop_{plot_name}.svg"
+            in readme
+        )
 
 
 def test_complex_constraint_sweep_published_representative_joint_plots():
